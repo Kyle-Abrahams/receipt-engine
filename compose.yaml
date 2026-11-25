@@ -4,7 +4,7 @@ services:
     environment:
       ACCEPT_EULA: 'Y'
       MSSQL_PID: Developer
-      MSSQL_SA_PASSWORD: ${MSSQL_SA_PASSWORD:?Copy .env.example to .env first}
+      MSSQL_SA_PASSWORD: ${MSSQL_SA_PASSWORD}
     volumes:
       - sql_data:/var/opt/mssql
     healthcheck:
