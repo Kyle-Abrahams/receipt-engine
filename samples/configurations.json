@@ -1,0 +1,102 @@
+{
+  "Standard CSV": {
+    "structure": {
+      "format": "csv",
+      "start_row": 1,
+      "trailing_rows": 0,
+      "delimiter": ",",
+      "text_identifier": "\"",
+      "validate_location": null,
+      "validate_value": null
+    },
+    "mappings": {
+      "eff_date": "Date",
+      "desc": "Description",
+      "account": "Reference",
+      "amount": "Amount"
+    },
+    "exceptions": {
+      "password_protected": false,
+      "row_exclusions": null,
+      "dr_trans": ">0",
+      "cr_trans": "<0"
+    }
+  },
+  "Validated bank CSV": {
+    "structure": {
+      "format": "csv",
+      "start_row": 3,
+      "trailing_rows": 0,
+      "delimiter": ",",
+      "text_identifier": "\"",
+      "validate_location": 2,
+      "validate_value": "DEMO-BANK-001"
+    },
+    "mappings": {
+      "eff_date": "Date",
+      "desc": "DESCRIPTION",
+      "account": "REFERENCE",
+      "amount": "Amount"
+    },
+    "exceptions": {
+      "password_protected": false,
+      "row_exclusions": null,
+      "dr_trans": "<0",
+      "cr_trans": ">0"
+    }
+  },
+  "Excel payment report": {
+    "structure": {
+      "format": "xlsx",
+      "start_row": 1,
+      "trailing_rows": 1,
+      "delimiter": ",",
+      "text_identifier": "\"",
+      "validate_location": null,
+      "validate_value": null
+    },
+    "mappings": {
+      "eff_date": "Last Payment Date",
+      "desc": "{Payment report}",
+      "account": "Account",
+      "amount": "Payment"
+    },
+    "exceptions": {
+      "password_protected": false,
+      "row_exclusions": [
+        {
+          "col": "Payment",
+          "value": 0
+        }
+      ],
+      "dr_trans": ">0",
+      "cr_trans": "<0"
+    }
+  },
+  "Custom delimited CSV": {
+    "structure": {
+      "format": "csv",
+      "start_row": 1,
+      "trailing_rows": 1,
+      "delimiter": ";",
+      "text_identifier": "\"",
+      "validate_location": null,
+      "validate_value": null
+    },
+    "mappings": {
+      "eff_date": "(1)",
+      "desc": "{Transfer [Note]}",
+      "account": "(2)",
+      "amount": [
+        "(3)",
+        "(4)"
+      ]
+    },
+    "exceptions": {
+      "password_protected": false,
+      "row_exclusions": null,
+      "dr_trans": ">0",
+      "cr_trans": "<0"
+    }
+  }
+}

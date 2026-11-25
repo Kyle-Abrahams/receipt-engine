@@ -1,0 +1,5 @@
+Date,Description,Reference,Amount
+2026-01-01,Payment,1000000001,-500
+2026-01-02,Payment,OLD002,-750
+2026-01-03,Payment,SHARED,-20
+2026-01-04,Unknown,UNKNOWN,-30
